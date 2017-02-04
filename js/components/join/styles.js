@@ -154,6 +154,16 @@ module.exports = StyleSheet.create({
     resizeMode: 'contain',
     marginTop: (Platform.OS === 'android') ? 7 : 5,
   },
+  viewArea: {
+    backgroundColor: '#000', 
+    overflow: 'hidden',
+    height: deviceHeight-115,
+  },
+  aviewArea: {
+    backgroundColor: '#000', 
+    overflow: 'hidden',
+    height: deviceHeight-120,
+  },
   listView: {
       backgroundColor: '#fff'
    },

@@ -28,7 +28,11 @@ import NeedHelp from './components/needhelp';
 import SplashPage from './components/splashscreen/';
 import Main from './components/main/';
 import Create from './components/create/';
+<<<<<<< HEAD
 import Game from './components/game/';
+=======
+import Join from './components/join/';
+>>>>>>> abc1019678737d8214dba181545718c3a5294945
 import { statusBarColor } from "./themes/base-theme";
 
 const {
@@ -131,8 +135,13 @@ class AppNavigator extends Component {
         return <NeedHelp />;
     case 'create':
         return <Create />;
+<<<<<<< HEAD
     case 'game':
         return <Game />;
+=======
+    case 'join':
+        return <Join />;
+>>>>>>> abc1019678737d8214dba181545718c3a5294945
     default :
         return <Walkthrough  />;
     }
