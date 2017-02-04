@@ -110,13 +110,13 @@ class Create extends Component {
                             rounded primary block large
                             style={styles.loginBtn}
                             textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
-                            onPress={() => this.pushRoute('start')}
+                            onPress={() => this.pushRoute('create')}
                           >
                               Start
                         </Button>
 
-                        
-                        
+
+
 
                     </Content>
                 </Image>

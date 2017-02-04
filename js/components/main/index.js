@@ -22,7 +22,7 @@ const headerLogo = require('../../../images/Header-Logo.png');
 
 
 
-class Start extends Component {
+class Main extends Component {
 
   static propTypes = {
     openDrawer: React.PropTypes.func,
@@ -90,7 +90,7 @@ class Start extends Component {
                             textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
                             onPress={() => this.pushRoute('create')}
                           >
-                              Start
+                              Create Game
                         </Button>
 
                         <Button
@@ -98,7 +98,7 @@ class Start extends Component {
                             style={styles.loginBtn}
                             textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
                           >
-                              Join
+                              Join Game
                         </Button>
 
 
@@ -119,8 +119,8 @@ class Start extends Component {
                               Settings
                         </Button>
 
-                        
-                        
+
+
 
                     </Content>
                 </Image>
@@ -142,4 +142,4 @@ const mapStateToProps = state => ({
   navigation: state.cardNavigation,
 });
 
-export default connect(mapStateToProps, bindAction)(Start);
+export default connect(mapStateToProps, bindAction)(Main);
