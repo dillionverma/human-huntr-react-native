@@ -28,6 +28,7 @@ import NeedHelp from './components/needhelp';
 import SplashPage from './components/splashscreen/';
 import Main from './components/main/';
 import Create from './components/create/';
+import Join from './components/join/';
 import { statusBarColor } from "./themes/base-theme";
 
 const {
@@ -130,6 +131,8 @@ class AppNavigator extends Component {
         return <NeedHelp />;
     case 'create':
         return <Create />;
+    case 'join':
+        return <Join />;
     default :
         return <Walkthrough  />;
     }
