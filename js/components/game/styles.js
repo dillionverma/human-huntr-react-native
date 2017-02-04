@@ -122,7 +122,6 @@ module.exports = StyleSheet.create({
     height: null,
   },
   container2: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },

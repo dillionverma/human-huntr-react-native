@@ -81,29 +81,27 @@ class Game extends Component {
                   </View>
                 </Header>
 
+                <View style={styles.container2}>
+                  <MapView style={styles.map}
+                    initialRegion={{
+                      latitude: 37.78825,
+                      longitude: -122.4324,
+                      latitudeDelta: 0.0922,
+                      longitudeDelta: 0.0421,
+                    }}
+                    />
+                </View>
 
                     <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
-                    <View style={styles.container2}>
-                      <MapView style={styles.map}
-                        initialRegion={{
-                          latitude: 37.78825,
-                          longitude: -122.4324,
-                          latitudeDelta: 0.0922,
-                          longitudeDelta: 0.0421,
-                        }}
-                        />
-                        </View>
-                    <Button
-                        rounded primary block large
-                        style={styles.loginBtn}
-                        textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
-                        onPress={() => this.pushRoute('create')}
-                      >
-                          ok
-                    </Button>
 
-
-
+                      <Button
+                          rounded primary block large
+                          style={styles.loginBtn}
+                          textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
+                          onPress={() => this.pushRoute('create')}
+                        >
+                            ok
+                      </Button>
                     </Content>
                 </Image>
             </Container>
