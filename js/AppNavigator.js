@@ -26,6 +26,8 @@ import Timeline from './components/timeline';
 import Widgets from './components/widgets';
 import NeedHelp from './components/needhelp';
 import SplashPage from './components/splashscreen/';
+import Start from './components/start/';
+import Create from './components/create/';
 import { statusBarColor } from "./themes/base-theme";
 
 const {
@@ -124,6 +126,10 @@ class AppNavigator extends Component {
         return <Widgets />;
     case 'needhelp':
         return <NeedHelp />;
+    case 'start':
+        return <Start />;
+    case 'create':
+        return <Create />;
     default :
         return <Walkthrough  />;
     }

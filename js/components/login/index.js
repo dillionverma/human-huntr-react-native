@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Image, Platform } from 'react-native';
+import { Image, Platform, Alert, AsyncStorage, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Content, Text, InputGroup, Input, Button, Icon, View } from 'native-base';
@@ -30,13 +30,85 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: '',
     };
     this.constructor.childContextTypes = {
       theme: React.PropTypes.object,
     };
   }
+
+
+  async onLoginPress() {
+      console.log('test0');
+      console.log(this.state.email);
+      console.log(this.state.password);
+
+
+      console.log('test 45');
+
+      
+    
+      try {
+
+          console.log('test1');
+
+          let response = await fetch('http://159.203.36.118/api/v1/sessions.json', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                user: {
+                    email: this.state.email,
+                    password: this.state.password
+                }
+            })
+        });
+
+          
+
+          console.log('test2');
+
+          console.log(response);
+
+          let responseJson = await response.json();
+
+          console.log(responseJson);
+
+          this.setState({authtoken: responseJson.data.auth_token});
+
+          console.log('test3');
+
+          if (responseJson.success == true) {
+              
+
+              const authToken = responseJson.data.auth_token;
+
+
+              console.log(responseJson.data);
+
+
+              try {
+                  await AsyncStorage.setItem('authToken', responseJson.data.auth_token);
+                  await AsyncStorage.setItem('userName', responseJson.data.name);
+                  await AsyncStorage.setItem('loggedIn', 'true');
+              } catch(error) {
+                  Alert.alert('Error',error.text,[{text: 'OK'},])
+              }
+
+              this.pushRoute('start');
+
+              
+          } else {
+              Alert.alert('Sign In Error',responseJson.info,[{text: 'OK'},])
+          }
+      } catch(error) {
+          Alert.alert('Problem',error.text,[{text: 'OK'},])
+      }
+  }
+
 
   replaceRoute(route) {
     this.props.replaceAt('login', { key: route }, this.props.navigation.key);
@@ -57,8 +129,8 @@ class Login extends Component {
               <InputGroup borderType="rounded" style={[styles.inputGrp, { borderWidth: 0, paddingLeft: 15 }]}>
                 <Icon name="ios-person-outline" />
                 <Input
-                  placeholder="Username"
-                  onChangeText={username => this.setState({ username })}
+                  placeholder="Email"
+                  onChangeText={email => this.setState({email: email })}
                   style={styles.input}
                 />
               </InputGroup>
@@ -68,7 +140,7 @@ class Login extends Component {
                 <Input
                   placeholder="Password"
                   secureTextEntry
-                  onChangeText={password => this.setState({ password })}
+                  onChangeText={password => this.setState({password: password })}
                   style={styles.input}
                 />
               </InputGroup>
@@ -77,9 +149,9 @@ class Login extends Component {
                 rounded primary block large
                 style={styles.loginBtn}
                 textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
-                onPress={() => this.replaceRoute('home', { username: this.state.username, password: this.state.password })}
+                onPress={this.onLoginPress.bind(this)}
               >
-                  Get Started
+                  Sign In
               </Button>
 
               <View style={styles.otherLinksContainer}>
@@ -123,3 +195,13 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, bindActions)(Login);
+
+
+
+
+
+
+
+
+
+
