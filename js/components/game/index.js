@@ -11,18 +11,17 @@ import { openDrawer } from '../../actions/drawer';
 
 import theme from '../../themes/base-theme';
 import styles from './styles';
+import MapView from 'react-native-maps';
 
 const {
   reset,
   pushRoute
 } = actions;
 
-const signUp = require('../../../images/BG-signUp.png');
-const headerLogo = require('../../../images/Header-Logo.png');
 
 
 
-class Create extends Component {
+class Game extends Component {
 
   static propTypes = {
     openDrawer: React.PropTypes.func,
@@ -36,9 +35,7 @@ class Create extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        location: '',
-        radius: '',
-        name: ''
+        location: ''
       };
     }
 
@@ -76,7 +73,6 @@ class Create extends Component {
                         <Icon name="ios-power" style={{lineHeight: 30}} />
                       </Button>
 
-                      <Image source={headerLogo} style={styles.imageHeader} />
 
                       <Button transparent style={styles.btnHeader} onPress={this.props.openDrawer} >
                         <Icon name="ios-menu" />
@@ -85,36 +81,26 @@ class Create extends Component {
                   </View>
                 </Header>
 
+
                     <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
-
-                        <InputGroup borderType="rounded" style={[styles.inputGrp, { borderWidth: 0, paddingLeft: 15 }]}>
-                          <Icon name="ios-person-outline" />
-                          <Input
-                            placeholder="Name"
-                            onChangeText={name => this.setState({name: name })}
-                            style={styles.input}
-                          />
-                        </InputGroup>
-
-                        <InputGroup borderType="rounded" style={[styles.inputGrp, { borderWidth: 0, paddingLeft: 15 }]}>
-                          <Icon name="ios-unlock-outline" />
-                          <Input
-                            placeholder="Radius"
-                            secureTextEntry
-                            onChangeText={radius => this.setState({radius: radius })}
-                            style={styles.input}
-                          />
-                        </InputGroup>
-
-                        <Button
-                            rounded primary block large
-                            style={styles.loginBtn}
-                            textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
-                            onPress={() => this.pushRoute('game')}
-                          >
-                              Start
-                        </Button>
-
+                    <View style={styles.container2}>
+                      <MapView style={styles.map}
+                        initialRegion={{
+                          latitude: 37.78825,
+                          longitude: -122.4324,
+                          latitudeDelta: 0.0922,
+                          longitudeDelta: 0.0421,
+                        }}
+                        />
+                        </View>
+                    <Button
+                        rounded primary block large
+                        style={styles.loginBtn}
+                        textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
+                        onPress={() => this.pushRoute('create')}
+                      >
+                          ok
+                    </Button>
 
 
 
@@ -124,6 +110,7 @@ class Create extends Component {
         )
     }
 }
+
 
 
 function bindAction(dispatch) {
@@ -138,4 +125,4 @@ const mapStateToProps = state => ({
   navigation: state.cardNavigation,
 });
 
-export default connect(mapStateToProps, bindAction)(Create);
+export default connect(mapStateToProps, bindAction)(Game);
