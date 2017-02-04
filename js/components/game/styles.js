@@ -129,6 +129,8 @@ module.exports = StyleSheet.create({
   map: {
     position: 'absolute',
     margin: 0,
+    width: deviceWidth,
+    height: deviceHeight
   },
   logoHeader: {
     width: 20,
