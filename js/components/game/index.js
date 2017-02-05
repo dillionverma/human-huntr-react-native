@@ -18,7 +18,7 @@ const {
   pushRoute
 } = actions;
 
-const timer = require('react-native-timer');
+
 
 
 class Game extends Component {
@@ -35,15 +35,9 @@ class Game extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        location: '',
-        time: 0,
+        location: ''
       };
     }
-
-    componentWillUnmount() {
-      clearInterval(this._interval);
-    }
-
 
 
     componentDidMount() {
@@ -57,11 +51,6 @@ class Game extends Component {
         (error) => alert(JSON.stringify(error)),
         {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
       );
-      this._interval = setInterval(() => {
-        this.setState({
-          time: this.state.time+1
-        })
-      }, 500);
     }
 
 
@@ -94,12 +83,7 @@ class Game extends Component {
                   </View>
                 </Header>
 
-
-                  <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
-
-
                     <View style={styles.container2}>
-
                       <MapView style={styles.map}
                         initialRegion={{
                           latitude: 44.22622955408341,
@@ -107,7 +91,7 @@ class Game extends Component {
                           latitudeDelta: 0.0922,
                           longitudeDelta: 0.0421,
                         }}>
-                        
+
                         <MapView.Circle
                           center={{latitude: 44.22622955408341, longitude: -76.49622785865934}}
                           radius={500}
@@ -124,29 +108,19 @@ class Game extends Component {
                           image={require('../../../images/enemy_location.png')} />
                         <MapView.Circle
                           center={{latitude: 44.22622955408341, longitude: -76.49622785865934}}
-                          radius='50'
+                          radius={50}
                           fillColor="rgba(8, 141, 225, 0.3)"
                           strokeColor="rgba(8, 141, 225, 0.9)"/>
                         </MapView>
-
-                        <View style={styles.bottomContainer}>
-                          <Text>test {this.state.time}</Text>
-                        </View>
                       </View>
 
 
 
+                      <View style={styles.bottomContainer}>
+                        <Text>test</Text>
+                      </View>
 
-
-                    
-                    
-                     
-
-
-
-                    </Content>
                 </Image>
-
             </Container>
         )
     }
