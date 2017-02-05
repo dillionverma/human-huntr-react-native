@@ -14,12 +14,14 @@ import styles from './styles';
 
 const {
   reset,
-  pushRoute
+  pushRoute,
+  popRoute
 } = actions;
 
 const signUp = require('../../../images/BG-signUp.png');
 const headerLogo = require('../../../images/Header-Logo.png');
 
+const bg = require('../../../images/BG.png');
 
 
 class Join extends Component {
@@ -50,6 +52,10 @@ class Join extends Component {
     componentDidMount() {
       this._loadInitialState().done();
 
+    }
+
+    popRoute() {
+      this.props.popRoute(this.props.navigation.key);
     }
 
 
@@ -114,7 +120,8 @@ class Join extends Component {
 
         return (
 
-          <Container theme={theme} style={{backgroundColor: '#fff'}}>
+          <Container theme={theme}>
+            <Image source={bg} style={styles.container} >
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
                 <Header>
                   <View style={styles.header} >
@@ -122,22 +129,17 @@ class Join extends Component {
                       <Button
                         transparent
                         style={styles.btnHeader}
-                        onPress={() => this.props.reset(this.props.navigation.key)}
+                        onPress={() => this.popRoute()}
                       >
-                        <Icon name="ios-power" style={{lineHeight: 30}} />
+                        <Icon name="ios-arrow-back" style={{lineHeight: 30}} />
                       </Button>
 
-                      <Image source={headerLogo} style={styles.imageHeader} />
-
-                      <Button transparent style={styles.btnHeader} onPress={this.props.openDrawer} >
-                        <Icon name="ios-menu" />
-                      </Button>
                     </View>
                   </View>
                 </Header>
 
 
-                <Content scrollEnabled={false} style={{backgroundColor: '#fff'}}>
+                <Content scrollEnabled={false} >
 
                   <View style={Platform.OS === 'android' ? styles.aviewArea : styles.viewArea }>
 
@@ -158,7 +160,7 @@ class Join extends Component {
                           title=" "
                           titleColor="#000"
                           colors={['#01cca1', '#00ff00', '#0000ff']}
-                          progressBackgroundColor="#fff"
+                          progressBackgroundColor="rgba(0,0,0,0)"
                         />
                       }
                     />
@@ -169,6 +171,7 @@ class Join extends Component {
                 </Content>
 
               </Image>
+              </Image>
             </Container>
 
         )
@@ -176,9 +179,9 @@ class Join extends Component {
 
     renderItem(item) {
       return (
-            <View style={{backgroundColor: '#fff'}}>
-            <TouchableOpacity >
-            <Text style={{color: '#000'}}>{item.name}</Text>
+          <View style={{borderColor: '#fff', borderBottomWidth: 1, backgroundColor: 'rgba(0,0,0,0.4)'}}>
+            <TouchableOpacity onPress={() => this.pushRoute('game')}>
+            <Text style={{color: '#fff', padding: 10, fontSize: 17}}>{item.name} <Icon name="ios-person" style={{fontSize: 20, marginLeft: 10}} /> 4</Text>
             </TouchableOpacity>
           </View>
 
@@ -192,7 +195,8 @@ function bindAction(dispatch) {
   return {
     openDrawer: () => dispatch(openDrawer()),
     reset: key => dispatch(reset([{ key: 'login' }], key, 0)),
-    pushRoute: (route, key) => dispatch(pushRoute(route, key))
+    pushRoute: (route, key) => dispatch(pushRoute(route, key)),
+    popRoute: key => dispatch(popRoute(key)),
   };
 }
 

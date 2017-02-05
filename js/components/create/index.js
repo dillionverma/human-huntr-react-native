@@ -14,12 +14,13 @@ import styles from './styles';
 
 const {
   reset,
-  pushRoute
+  pushRoute,
+  popRoute
 } = actions;
 
 const signUp = require('../../../images/BG-signUp.png');
 const headerLogo = require('../../../images/Header-Logo.png');
-
+const bg = require('../../../images/BG.png');
 
 
 class Create extends Component {
@@ -61,9 +62,14 @@ class Create extends Component {
       this.props.pushRoute({ key: route, index: 1 }, this.props.navigation.key);
     }
 
+    popRoute() {
+      this.props.popRoute(this.props.navigation.key);
+    }
+
     render() {
         return (
             <Container theme={theme} style={{backgroundColor: '#fff'}}>
+              <Image source={bg} style={styles.container} >
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
                 <Header>
                   <View style={styles.header} >
@@ -71,11 +77,11 @@ class Create extends Component {
                       <Button
                         transparent
                         style={styles.btnHeader}
-                        onPress={() => this.props.reset(this.props.navigation.key)}
+                        onPress={() => this.popRoute()}
                       >
                         <Icon name="ios-arrow-back" style={{lineHeight: 30}} />
                       </Button>
-                      <Text style={{marginTop:6}} onPress={() => this.pushRoute('game')}> Create Game</Text>
+
 
                     </View>
                   </View>
@@ -84,7 +90,7 @@ class Create extends Component {
                     <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
 
                         <InputGroup borderType="rounded" style={[styles.inputGrp, { borderWidth: 0, paddingLeft: 15 }]}>
-                          <Icon name="ios-person-outline" />
+                          <Icon name="ios-create-outline" />
                           <Input
                             placeholder="Name"
                             onChangeText={name => this.setState({name: name })}
@@ -93,10 +99,9 @@ class Create extends Component {
                         </InputGroup>
 
                         <InputGroup borderType="rounded" style={[styles.inputGrp, { borderWidth: 0, paddingLeft: 15 }]}>
-                          <Icon name="ios-unlock-outline" />
+                          <Icon name="ios-information-circle" />
                           <Input
-                            placeholder="Radius"
-                            secureTextEntry
+                            placeholder="Radius (m)"
                             onChangeText={radius => this.setState({radius: radius })}
                             style={styles.input}
                           />
@@ -116,6 +121,7 @@ class Create extends Component {
 
                     </Content>
                 </Image>
+              </Image>
             </Container>
         )
     }
@@ -126,7 +132,8 @@ function bindAction(dispatch) {
   return {
     openDrawer: () => dispatch(openDrawer()),
     reset: key => dispatch(reset([{ key: 'login' }], key, 0)),
-    pushRoute: (route, key) => dispatch(pushRoute(route, key))
+    pushRoute: (route, key) => dispatch(pushRoute(route, key)),
+    popRoute: key => dispatch(popRoute(key)),
   };
 }
 

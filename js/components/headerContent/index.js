@@ -36,10 +36,6 @@ class HeaderContent extends Component {
             <Icon name="ios-arrow-back" />
           </Button>
 
-          <Image source={headerLogo} style={styles.imageHeader} />
-          <Button transparent style={styles.btnHeader} onPress={this.props.openDrawer} >
-            <Icon name="ios-menu" />
-          </Button>
         </View>
       </View>
     );

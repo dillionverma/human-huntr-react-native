@@ -84,7 +84,7 @@ module.exports = StyleSheet.create({
     slide: {
         flex: 1,
         width: null,
-        backgroundColor: 'transparent'
+        backgroundColor: 'rgba(0,0,0,0)'
     },
     swiperTextContent: {
         // marginBottom: 170,
@@ -103,7 +103,7 @@ module.exports = StyleSheet.create({
         marginBottom: 0
     },
     swiperActiveDot: {
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
         width: 8,
         height: 8,
         borderRadius: 4,
@@ -155,16 +155,16 @@ module.exports = StyleSheet.create({
     marginTop: (Platform.OS === 'android') ? 7 : 5,
   },
   viewArea: {
-    backgroundColor: '#000', 
+    backgroundColor: 'rgba(0,0,0,0)', 
     overflow: 'hidden',
     height: deviceHeight-115,
   },
   aviewArea: {
-    backgroundColor: '#000', 
+    backgroundColor: 'rgba(0,0,0,0)', 
     overflow: 'hidden',
     height: deviceHeight-120,
   },
   listView: {
-      backgroundColor: '#fff'
+      backgroundColor: 'rgba(0,0,0,0)'
    },
 });

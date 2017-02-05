@@ -63,67 +63,18 @@ class Profile extends Component {
                             <Col>
                                 <TouchableOpacity  style={styles.linkTabs_header}>
                                     <Text style={styles.linkTabs_tabCounts}>13</Text>
-                                    <Text note style={styles.linkTabs_tabName}>Comments</Text>
+                                    <Text note style={styles.linkTabs_tabName}>Points</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col>
                                 <TouchableOpacity  style={styles.linkTabs_header}>
                                     <Text style={styles.linkTabs_tabCounts}>12</Text>
-                                    <Text note style={styles.linkTabs_tabName}>Channels</Text>
-                                </TouchableOpacity>
-                            </Col>
-                            <Col>
-                                <TouchableOpacity  style={styles.linkTabs_header}>
-                                    <Text style={styles.linkTabs_tabCounts}>52</Text>
-                                    <Text note style={styles.linkTabs_tabName}>Bookmarks</Text>
+                                    <Text note style={styles.linkTabs_tabName}>Hats</Text>
                                 </TouchableOpacity>
                             </Col>
                         </Grid>
                     </View>
-                    <View style={styles.linkTabs}>
-                        <Grid>
-                        <Row>
-                            <Col>
-                                <TouchableOpacity  style={styles.linkTabs_header}>
-                                    <Text style={styles.linkTabs_tabCounts}>13</Text>
-                                    <Text note style={styles.linkTabs_tabName}>Comments</Text>
-                                </TouchableOpacity>
-                            </Col>
-                            <Col>
-                                <TouchableOpacity  style={styles.linkTabs_header}>
-                                    <Text style={styles.linkTabs_tabCounts}>12</Text>
-                                    <Text note style={styles.linkTabs_tabName}>Channels</Text>
-                                </TouchableOpacity>
-                            </Col>
-                            <Col>
-                                <TouchableOpacity  style={styles.linkTabs_header}>
-                                    <Text style={styles.linkTabs_tabCounts}>52</Text>
-                                    <Text note style={styles.linkTabs_tabName}>Bookmarks</Text>
-                                </TouchableOpacity>
-                            </Col>
-                          </Row>
-                          <Row>
-                              <Col>
-                                  <TouchableOpacity  style={styles.linkTabs_header}>
-                                      <Text style={styles.linkTabs_tabCounts}>13</Text>
-                                      <Text note style={styles.linkTabs_tabName}>Comments</Text>
-                                  </TouchableOpacity>
-                              </Col>
-                              <Col>
-                                  <TouchableOpacity  style={styles.linkTabs_header}>
-                                      <Text style={styles.linkTabs_tabCounts}>12</Text>
-                                      <Text note style={styles.linkTabs_tabName}>Channels</Text>
-                                  </TouchableOpacity>
-                              </Col>
-                              <Col>
-                                  <TouchableOpacity  style={styles.linkTabs_header}>
-                                      <Text style={styles.linkTabs_tabCounts}>52</Text>
-                                      <Text note style={styles.linkTabs_tabName}>Bookmarks</Text>
-                                  </TouchableOpacity>
-                              </Col>
-                            </Row>
-                        </Grid>
-                    </View>
+                    
 
                     <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
                         <View style={{backgroundColor: '#fff'}}>

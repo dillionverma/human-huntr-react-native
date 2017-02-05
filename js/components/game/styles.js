@@ -159,7 +159,7 @@ module.exports = StyleSheet.create({
   it: {
     textAlign: 'center',
     fontSize: 26,
-    paddingTop: 3
+    paddingTop: 9
   },
   imageHeader: {
     height: 25,
