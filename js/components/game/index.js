@@ -18,7 +18,7 @@ const {
   pushRoute
 } = actions;
 
-
+const timer = require('react-native-timer');
 
 
 class Game extends Component {
@@ -35,9 +35,15 @@ class Game extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        location: ''
+        location: '',
+        time: 0,
       };
     }
+
+    componentWillUnmount() {
+      clearInterval(this._interval);
+    }
+
 
 
     componentDidMount() {
@@ -51,6 +57,11 @@ class Game extends Component {
         (error) => alert(JSON.stringify(error)),
         {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
       );
+      this._interval = setInterval(() => {
+        this.setState({
+          time: this.state.time+1
+        })
+      }, 500);
     }
 
 
@@ -85,7 +96,10 @@ class Game extends Component {
 
 
                   <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
+
+
                     <View style={styles.container2}>
+
                       <MapView style={styles.map}
                         initialRegion={{
                           latitude: 44.22622955408341,
@@ -96,7 +110,7 @@ class Game extends Component {
                         
                         <MapView.Circle
                           center={{latitude: 44.22622955408341, longitude: -76.49622785865934}}
-                          radius='500'
+                          radius={500}
                           fillColor="rgba(0, 0, 0, 0.1)"
                           strokeColor="rgba(0, 0, 0, 0.1)"/>
                         <MapView.Marker
@@ -114,18 +128,25 @@ class Game extends Component {
                           fillColor="rgba(8, 141, 225, 0.3)"
                           strokeColor="rgba(8, 141, 225, 0.9)"/>
                         </MapView>
+
+                        <View style={styles.bottomContainer}>
+                          <Text>test {this.state.time}</Text>
+                        </View>
                       </View>
+
+
+
+
 
                     
                     
-                      <View style={styles.bottomContainer}>
-                        <Text>test</Text>
-                      </View>
+                     
 
 
 
                     </Content>
                 </Image>
+
             </Container>
         )
     }

@@ -129,8 +129,9 @@ module.exports = StyleSheet.create({
     position: 'absolute',
     margin: 0,
     width: deviceWidth,
-    height: deviceHeight
+    height: deviceHeight/1.4
   },
+
   logoHeader: {
     width: 20,
     height: 28,
@@ -169,16 +170,11 @@ module.exports = StyleSheet.create({
     height: 50,
   },
   bottomContainer: {
-    flex:1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-      alignSelf : 'stretch',
-      right:  0,
-      bottom: 0,
-      top:0,
-      left:0,
-      position: 'absolute',
-    backgroundColor:'#424242',  
-  }
+    position: 'absolute',
+    margin: 0,
+    marginTop: deviceHeight/1.5,
+    width: deviceWidth,
+    height: deviceHeight/3.4,
+    backgroundColor: '#000',
+  },
 });
