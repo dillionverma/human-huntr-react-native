@@ -30,7 +30,7 @@ module.exports = StyleSheet.create({
   inputGrp: {
     flexDirection: 'row',
     borderRadius: 25,
-    backgroundColor: 'rgba(255,255,255,0.3)',
+    backgroundColor: 'rgba(255,255,255,0.5)',
     marginBottom: 20,
   },
   input: {
