@@ -91,5 +91,13 @@ module.exports = StyleSheet.create({
         fontSize: 12,
         fontWeight: 'bold',
         paddingBottom: 5
+    },
+    item: {
+      flex: 1,
+      height: 160,
+      margin: 1
+    },
+    list: {
+      flex: 1
     }
 });

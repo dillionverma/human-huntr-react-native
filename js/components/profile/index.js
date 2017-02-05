@@ -33,6 +33,9 @@ class Profile extends Component {
       this.props.navigateTo(route, 'home');
     }
 
+    _renderItem = (data, i) => <View style={[{backgroundColor: data}, styles.item]} key={i}/>
+
+
     render() {
         return (
             <Container theme={theme}>
@@ -75,6 +78,50 @@ class Profile extends Component {
                                     <Text note style={styles.linkTabs_tabName}>Bookmarks</Text>
                                 </TouchableOpacity>
                             </Col>
+                        </Grid>
+                    </View>
+                    <View style={styles.linkTabs}>
+                        <Grid>
+                        <Row>
+                            <Col>
+                                <TouchableOpacity  style={styles.linkTabs_header}>
+                                    <Text style={styles.linkTabs_tabCounts}>13</Text>
+                                    <Text note style={styles.linkTabs_tabName}>Comments</Text>
+                                </TouchableOpacity>
+                            </Col>
+                            <Col>
+                                <TouchableOpacity  style={styles.linkTabs_header}>
+                                    <Text style={styles.linkTabs_tabCounts}>12</Text>
+                                    <Text note style={styles.linkTabs_tabName}>Channels</Text>
+                                </TouchableOpacity>
+                            </Col>
+                            <Col>
+                                <TouchableOpacity  style={styles.linkTabs_header}>
+                                    <Text style={styles.linkTabs_tabCounts}>52</Text>
+                                    <Text note style={styles.linkTabs_tabName}>Bookmarks</Text>
+                                </TouchableOpacity>
+                            </Col>
+                          </Row>
+                          <Row>
+                              <Col>
+                                  <TouchableOpacity  style={styles.linkTabs_header}>
+                                      <Text style={styles.linkTabs_tabCounts}>13</Text>
+                                      <Text note style={styles.linkTabs_tabName}>Comments</Text>
+                                  </TouchableOpacity>
+                              </Col>
+                              <Col>
+                                  <TouchableOpacity  style={styles.linkTabs_header}>
+                                      <Text style={styles.linkTabs_tabCounts}>12</Text>
+                                      <Text note style={styles.linkTabs_tabName}>Channels</Text>
+                                  </TouchableOpacity>
+                              </Col>
+                              <Col>
+                                  <TouchableOpacity  style={styles.linkTabs_header}>
+                                      <Text style={styles.linkTabs_tabCounts}>52</Text>
+                                      <Text note style={styles.linkTabs_tabName}>Bookmarks</Text>
+                                  </TouchableOpacity>
+                              </Col>
+                            </Row>
                         </Grid>
                     </View>
 
