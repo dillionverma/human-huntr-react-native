@@ -60,7 +60,9 @@ class Game extends Component {
 
     render() {
         return (
+
             <Container theme={theme} style={{backgroundColor: '#fff'}}>
+
                 <Image source={require('../../../images/glow2.png')} style={styles.container} >
                 <Header>
                   <View style={styles.header} >
@@ -86,22 +88,39 @@ class Game extends Component {
                     <View style={styles.container2}>
                       <MapView style={styles.map}
                         initialRegion={{
-                          latitude: 37.78825,
-                          longitude: -122.4324,
+                          latitude: 44.22622955408341,
+                          longitude: -76.49622785865934,
                           latitudeDelta: 0.0922,
                           longitudeDelta: 0.0421,
-                        }}
-                        />
-                        </View>
-                    <Button
-                        rounded primary block large
-                        style={styles.loginBtn}
-                        textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
-                        onPress={() => this.pushRoute('create')}
-                      >
-                          ok
-                    </Button>
+                        }}>
+                        
+                        <MapView.Circle
+                          center={{latitude: 44.22622955408341, longitude: -76.49622785865934}}
+                          radius='500'
+                          fillColor="rgba(0, 0, 0, 0.1)"
+                          strokeColor="rgba(0, 0, 0, 0.1)"/>
+                        <MapView.Marker
+                          coordinate={{latitude: 44.22622955408341, longitude: -76.49622785865934}}
+                          image={require('../../../images/current_location.png')} />
+                        <MapView.Marker
+                          coordinate={{latitude: 44.2268058, longitude: -76.4974636}}
+                          image={require('../../../images/friend_location.png')} />
+                        <MapView.Marker
+                          coordinate={{latitude: 44.2258017, longitude: -76.4950162}}
+                          image={require('../../../images/enemy_location.png')} />
+                        <MapView.Circle
+                          center={{latitude: 44.22622955408341, longitude: -76.49622785865934}}
+                          radius='50'
+                          fillColor="rgba(8, 141, 225, 0.3)"
+                          strokeColor="rgba(8, 141, 225, 0.9)"/>
+                        </MapView>
+                      </View>
 
+                    
+                    
+                      <View style={styles.bottomContainer}>
+                        <Text>test</Text>
+                      </View>
 
 
                     </Content>
