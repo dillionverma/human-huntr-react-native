@@ -84,7 +84,7 @@ class Game extends Component {
                 </Header>
 
 
-                    <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
+                  <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
                     <View style={styles.container2}>
                       <MapView style={styles.map}
                         initialRegion={{
@@ -121,6 +121,7 @@ class Game extends Component {
                       <View style={styles.bottomContainer}>
                         <Text>test</Text>
                       </View>
+
 
 
                     </Content>

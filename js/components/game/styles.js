@@ -122,7 +122,6 @@ module.exports = StyleSheet.create({
     height: null,
   },
   container2: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -170,14 +169,16 @@ module.exports = StyleSheet.create({
     height: 50,
   },
   bottomContainer: {
-    position: 'absolute',
-    flex:0.1,
-    left: 0,
-    right: 0,
-    bottom: -10,
-    backgroundColor:'green',
-    flexDirection:'row',
-    height:80,
-    alignItems:'center',
+    flex:1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+      alignSelf : 'stretch',
+      right:  0,
+      bottom: 0,
+      top:0,
+      left:0,
+      position: 'absolute',
+    backgroundColor:'#424242',  
   }
 });
