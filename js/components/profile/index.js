@@ -79,58 +79,43 @@ class Profile extends Component {
                     <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
                         <View style={{backgroundColor: '#fff'}}>
                             <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => this.navigateTo('home')}>
-                                <Image source={require('../../../images/NewsIcons/1.jpg')} style={styles.newsImage} />
+                                <Image source={require('../../../images/Selfies/1.jpg')} style={styles.newsImage} />
                                 <View style={styles.newsContent}>
                                     <Text numberOfLines={2} style={styles.newsHeader}>
-                                        Lorem Ipsum is simply dummy text of the printing
+                                        Looking good :) 
                                     </Text>
                                     <Grid style={{marginTop: 25}}>
                                         <Col>
                                             <TouchableOpacity>
-                                                <Text style={styles.newsLink}>CDC</Text>
-                                            </TouchableOpacity>
-                                        </Col>
-                                        <Col>
-                                            <TouchableOpacity style={styles.newsTypeView}>
-                                                <Text style={styles.newsTypeText}>ENVIRONMENT</Text>
+                                                <Text style={styles.newsLink}>Feb 5</Text>
                                             </TouchableOpacity>
                                         </Col>
                                     </Grid>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => this.navigateTo('home')}>
-                                <Image source={require('../../../images/NewsIcons/3.jpg')} style={styles.newsImage} />
+                                <Image source={require('../../../images/Selfies/2.jpg')} style={styles.newsImage} />
                                 <View style={styles.newsContent}>
                                     <Text numberOfLines={2} style={styles.newsHeader}>
-                                        Contrary to popular belief, Lorem Ipsum is not simply random text.
+                                        Great Pic !
                                     </Text>
                                     <Grid style={{marginTop: 25}}>
                                         <Col>
                                             <TouchableOpacity>
-                                                <Text style={styles.newsLink}>SPACE.com</Text>
-                                            </TouchableOpacity>
-                                        </Col>
-                                        <Col>
-                                            <TouchableOpacity style={styles.newsTypeView}>
-                                                <Text style={styles.newsTypeText}>SCIENCE</Text>
+                                                <Text style={styles.newsLink}>Feb 5</Text>
                                             </TouchableOpacity>
                                         </Col>
                                     </Grid>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => this.navigateTo('home')}>
-                                <Image source={require('../../../images/NewsIcons/4.jpg')} style={styles.newsImage} />
+                                <Image source={require('../../../images/Selfies/3.jpg')} style={styles.newsImage} />
                                 <View style={styles.newsContent}>
-                                    <Text numberOfLines={2} style={styles.newsHeader}>It has survived not only five centuries</Text>
+                                    <Text numberOfLines={2} style={styles.newsHeader}>Second great game of Man Hunt. </Text>
                                     <Grid style={{marginTop: 25}}>
                                         <Col>
                                             <TouchableOpacity>
-                                                <Text style={styles.newsLink}>SKY.com</Text>
-                                            </TouchableOpacity>
-                                        </Col>
-                                        <Col>
-                                            <TouchableOpacity style={styles.newsTypeView}>
-                                                <Text style={styles.newsTypeText}>WORLD</Text>
+                                                <Text style={styles.newsLink}>Feb 4</Text>
                                             </TouchableOpacity>
                                         </Col>
                                     </Grid>
@@ -138,63 +123,21 @@ class Profile extends Component {
                             </TouchableOpacity>
 
                             <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => this.navigateTo('home')}>
-                                <Image source={require('../../../images/NewsIcons/10.jpg')} style={styles.newsImage} />
+                                <Image source={require('../../../images/Selfies/4.jpg')} style={styles.newsImage} />
                                 <View style={styles.newsContent}>
                                     <Text numberOfLines={2} style={styles.newsHeader}>
-                                        Lorem Ipsum is simply dummy text of the printing
+                                        First Selfie !
                                     </Text>
                                     <Grid style={{marginTop: 25}}>
                                         <Col>
                                             <TouchableOpacity>
-                                                <Text style={styles.newsLink}>ANI.com</Text>
-                                            </TouchableOpacity>
-                                        </Col>
-                                        <Col>
-                                            <TouchableOpacity style={styles.newsTypeView}>
-                                                <Text style={styles.newsTypeText}>ANIMATION</Text>
+                                                <Text style={styles.newsLink}>Feb 4</Text>
                                             </TouchableOpacity>
                                         </Col>
                                     </Grid>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => this.navigateTo('home')}>
-                                <Image source={require('../../../images/NewsIcons/9.jpg')} style={styles.newsImage} />
-                                <View style={styles.newsContent}>
-                                    <Text numberOfLines={2} style={styles.newsHeader}>
-                                        Contrary to popular belief, Lorem Ipsum is not simply random text.
-                                    </Text>
-                                    <Grid style={{marginTop: 25}}>
-                                        <Col>
-                                            <TouchableOpacity>
-                                                <Text style={styles.newsLink}>STYLE.com</Text>
-                                            </TouchableOpacity>
-                                        </Col>
-                                        <Col>
-                                            <TouchableOpacity style={styles.newsTypeView}>
-                                                <Text style={styles.newsTypeText}>FASHION</Text>
-                                            </TouchableOpacity>
-                                        </Col>
-                                    </Grid>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => this.navigateTo('home')}>
-                                <Image source={require('../../../images/NewsIcons/12.jpg')} style={styles.newsImage} />
-                                <View style={styles.newsContent}>
-                                    <Text numberOfLines={2} style={styles.newsHeader}>It has survived not only five centuries</Text>
-                                    <Grid style={{marginTop: 25}}>
-                                        <Col>
-                                            <TouchableOpacity>
-                                                <Text style={styles.newsLink}>ART.com</Text>
-                                            </TouchableOpacity>
-                                        </Col>
-                                        <Col>
-                                            <TouchableOpacity style={styles.newsTypeView}>
-                                                <Text style={styles.newsTypeText}>ART</Text>
-                                            </TouchableOpacity>
-                                        </Col>
-                                    </Grid>
-                                </View>
-                            </TouchableOpacity>
+                            
                         </View>
                     </Content>
                 </Image>
