@@ -75,7 +75,7 @@ class Create extends Component {
                       >
                         <Icon name="ios-arrow-back" style={{lineHeight: 30}} />
                       </Button>
-
+                      <Text style={{marginTop:6}} onPress={() => this.pushRoute('game')}> Create Game</Text>
 
                     </View>
                   </View>

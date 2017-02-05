@@ -21,7 +21,7 @@ module.exports = StyleSheet.create({
   aShadow: {
     flex: 1,
     resizeMode: 'contain',
-    width: (deviceWidth / 3) + 8,
+    width: (deviceWidth / 2) + 8,
     height: (deviceHeight / 20),
     padding: 20,
     alignSelf: 'center',
