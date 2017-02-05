@@ -155,14 +155,18 @@ module.exports = StyleSheet.create({
     marginTop: (Platform.OS === 'android') ? 7 : 5,
   },
   loginBtn: {
-    marginTop: 10,
+    marginTop: 20,
+    marginLeft: 50,
+    marginRight: 50,
     height: 50,
   },
   inputGrp: {
         flexDirection: 'row',
         borderRadius: 25,
         backgroundColor: 'rgba(0,0,0,0.2)',
-        marginBottom: 20,
+        marginTop: 20,
+        marginLeft: 50,
+        marginRight: 50,
         borderWidth: 0,
         paddingLeft: 15
     },

@@ -43,14 +43,14 @@ class Profile extends Component {
 
                     <View style={styles.profileInfoContainer}>
                         <TouchableOpacity style={{alignSelf: 'center'}}>
-                            <Thumbnail source={require('../../../images/contacts/sanket.png')} style={styles.profilePic} />
+                            <Thumbnail source={require('../../../images/contacts/dillion.png')} style={styles.profilePic} />
                         </TouchableOpacity>
                         <View style={styles.profileInfo}>
                             <TouchableOpacity>
-                                <Text style={styles.profileUser}>Kumar Sanket</Text>
+                                <Text style={styles.profileUser}>Dillion Verma</Text>
                             </TouchableOpacity>
                             <TouchableOpacity>
-                                <Text note  style={styles.profileUserInfo}>CEO, GeekyAnts</Text>
+                                <Text note  style={styles.profileUserInfo}>UW Double Degree Student</Text>
                             </TouchableOpacity>
                         </View>
                     </View>

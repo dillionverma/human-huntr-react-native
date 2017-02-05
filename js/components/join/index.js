@@ -49,7 +49,7 @@ class Join extends Component {
 
     componentDidMount() {
       this._loadInitialState().done();
-      
+
     }
 
 
@@ -93,7 +93,7 @@ class Join extends Component {
           data: [],
         });
       })
-      .done();  
+      .done();
     }
 
     pushRoute(route) {
@@ -141,8 +141,8 @@ class Join extends Component {
 
                   <View style={Platform.OS === 'android' ? styles.aviewArea : styles.viewArea }>
 
-                    
-                   
+
+
                     <ListView
                       dataSource={this.state.dataSource}
                       renderRow={this.renderItem.bind(this)}
@@ -161,7 +161,7 @@ class Join extends Component {
                           progressBackgroundColor="#fff"
                         />
                       }
-                    /> 
+                    />
 
 
 
@@ -201,6 +201,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, bindAction)(Join);
-
-
-

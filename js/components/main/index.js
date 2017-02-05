@@ -17,8 +17,11 @@ const {
   pushRoute
 } = actions;
 
+const bg = require('../../../images/BG.png');
 const signUp = require('../../../images/BG-signUp.png');
 const headerLogo = require('../../../images/Header-Logo.png');
+const stickman = require('../../../images/stick-man.gif');
+const logo = require('../../../images/logo.png');
 
 
 
@@ -62,28 +65,12 @@ class Main extends Component {
     render() {
         return (
             <Container theme={theme} style={{backgroundColor: '#fff'}}>
-                <Image source={require('../../../images/glow2.png')} style={styles.container} >
-                <Header>
-                  <View style={styles.header} >
-                    <View style={styles.rowHeader}>
-                      <Button
-                        transparent
-                        style={styles.btnHeader}
-                        onPress={() => this.props.reset(this.props.navigation.key)}
-                      >
-                        <Icon name="ios-power" style={{lineHeight: 30}} />
-                      </Button>
+                <Image source={bg} style={styles.container} >
 
-                      <Image source={headerLogo} style={styles.imageHeader} />
 
-                      <Button transparent style={styles.btnHeader} onPress={this.props.openDrawer} >
-                        <Icon name="ios-menu" />
-                      </Button>
-                    </View>
-                  </View>
-                </Header>
 
-                    <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
+                <Image source={logo} style={Platform.OS === 'android' ? styles.aShadow : styles.iosShadow} />
+                    <Content style={{flex: 1, marginTop: 40, marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
                         <Button
                             rounded primary block large
                             style={styles.loginBtn}
@@ -107,6 +94,7 @@ class Main extends Component {
                             rounded primary block large
                             style={styles.loginBtn}
                             textStyle={Platform.OS === 'android' ? { marginTop: -5, fontSize: 16 } : { fontSize: 16, marginTop: -5, fontWeight: '900' }}
+                            onPress={() => this.pushRoute('profile')}
                           >
                               Profile
                         </Button>

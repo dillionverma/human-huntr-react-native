@@ -8,6 +8,21 @@ var deviceHeight = Dimensions.get('window').height;
 var deviceWidth = Dimensions.get('window').width;
 
 module.exports = StyleSheet.create({
+    iosShadow: {
+      flex: 1,
+      width: (deviceHeight < 500) ? 80 : (deviceWidth / 4) + 12,
+      resizeMode: 'contain',
+      height: (deviceHeight < 500) ? 50 : (deviceHeight / 15),
+      alignSelf: 'center',
+    },
+    aShadow: {
+      flex: 1,
+      resizeMode: 'contain',
+      width: (deviceWidth / 3) + 8,
+      height: (deviceHeight / 20),
+      padding: 20,
+      alignSelf: 'center',
+    },
     newsContent: {
         flexDirection: 'column',
         paddingTop: 20,
@@ -154,8 +169,16 @@ module.exports = StyleSheet.create({
     resizeMode: 'contain',
     marginTop: (Platform.OS === 'android') ? 7 : 5,
   },
+  imageStick: {
+    height: 60,
+    width: 60,
+    resizeMode: 'contain',
+    marginTop: (Platform.OS === 'android') ? 7 : 5,
+  },
   loginBtn: {
     marginTop: 10,
+    marginRight: 50,
+    marginLeft: 50,
     height: 50,
   },
 });
