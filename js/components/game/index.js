@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Image, View, TouchableOpacity,Platform } from 'react-native';
+import { Image, View, TouchableOpacity,Platform, ScrollView, Alert } from 'react-native';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
 import { Container, Header,Content, Text, InputGroup, Input, Button, Icon, Card } from 'native-base';
@@ -40,11 +40,6 @@ class Game extends Component {
       };
     }
 
-    componentWillUnmount() {
-      clearInterval(this._interval);
-    }
-
-
 
     componentDidMount() {
       navigator.geolocation.getCurrentPosition(
@@ -81,25 +76,25 @@ class Game extends Component {
                       <Button
                         transparent
                         style={styles.btnHeader}
-                        onPress={() => this.props.reset(this.props.navigation.key)}
+                        onPress={() => 
+                          Alert.alert(
+                            'Settings',
+                            '',
+                            [
+                              {text: 'Quit Game', onPress: () => console.log('Ask me later pressed')}
+                            ]
+                          )
+                         }
                       >
-                        <Icon name="ios-power" style={{lineHeight: 30}} />
+                        <Icon name="ios-settings" style={{lineHeight: 30}} />
                       </Button>
 
 
-                      <Button transparent style={styles.btnHeader} onPress={this.props.openDrawer} >
-                        <Icon name="ios-menu" />
-                      </Button>
                     </View>
                   </View>
                 </Header>
 
-
-                  <Content style={{marginBottom:(Platform.OS === 'ios') ? -50 : -10}}>
-
-
                     <View style={styles.container2}>
-
                       <MapView style={styles.map}
                         initialRegion={{
                           latitude: 44.22622955408341,
@@ -107,7 +102,7 @@ class Game extends Component {
                           latitudeDelta: 0.0922,
                           longitudeDelta: 0.0421,
                         }}>
-                        
+
                         <MapView.Circle
                           center={{latitude: 44.22622955408341, longitude: -76.49622785865934}}
                           radius={500}
@@ -124,29 +119,26 @@ class Game extends Component {
                           image={require('../../../images/enemy_location.png')} />
                         <MapView.Circle
                           center={{latitude: 44.22622955408341, longitude: -76.49622785865934}}
-                          radius='50'
+                          radius={50}
                           fillColor="rgba(8, 141, 225, 0.3)"
                           strokeColor="rgba(8, 141, 225, 0.9)"/>
                         </MapView>
 
+                        
                         <View style={styles.bottomContainer}>
-                          <Text>{this.state.time}</Text>
+                          <View style={styles.textLeft}>
+                            <Text style={{fontSize: 23, lineHeight: 23}}>Players: 4</Text>
+                          </View>
+                          <View style={styles.textLeft}>
+                            <Text style={styles.textRight}>{this.state.time} Seconds </Text>
+                          </View>
                         </View>
+                      
+
                       </View>
 
 
-
-
-
-                    
-                    
-                     
-
-
-
-                    </Content>
                 </Image>
-
             </Container>
         )
     }

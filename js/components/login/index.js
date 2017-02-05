@@ -98,7 +98,7 @@ class Login extends Component {
                   Alert.alert('Error',error.text,[{text: 'OK'},])
               }
 
-              this.pushRoute('start');
+              this.pushRoute('main');
 
               
           } else {

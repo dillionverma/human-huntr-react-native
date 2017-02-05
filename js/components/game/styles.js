@@ -129,7 +129,7 @@ module.exports = StyleSheet.create({
     position: 'absolute',
     margin: 0,
     width: deviceWidth,
-    height: deviceHeight/1.4
+    height: deviceHeight/1.3
   },
 
   logoHeader: {
@@ -170,14 +170,34 @@ module.exports = StyleSheet.create({
     height: 50,
   },
   bottomContainer: {
-    position: 'absolute',
-    margin: 0,
-    marginTop: deviceHeight/1.5,
+    // position: 'absolute',
+    marginTop: deviceHeight/1.3,
     width: deviceWidth,
-    height: deviceHeight/3.4,
+    height: deviceHeight/1.5,
     backgroundColor: '#2ad110',
-    alignSelf: 'center',
-    fontSize: 90,
+    paddingTop: 20,
+    marginBottom: -20,
+    flex: 1,
+    flexDirection: 'row',
   },
+  bottomFont: {
+    fontSize: 90,
+    alignSelf: 'center',
+    height: deviceHeight/3.7,
+    lineHeight: 90,
+    
+  },
+  textLeft: {
+    flex: 1,
+    paddingLeft: 5,
+  },
+  textRight: {
+    flex: 1,
+    textAlign: 'right',
+    paddingRight: 5,
+    fontSize: 23,
+    lineHeight: 23,
+  },
+
 
 });

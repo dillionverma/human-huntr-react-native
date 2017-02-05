@@ -73,14 +73,10 @@ class Create extends Component {
                         style={styles.btnHeader}
                         onPress={() => this.props.reset(this.props.navigation.key)}
                       >
-                        <Icon name="ios-power" style={{lineHeight: 30}} />
+                        <Icon name="ios-arrow-back" style={{lineHeight: 30}} />
                       </Button>
 
-                      <Image source={headerLogo} style={styles.imageHeader} />
 
-                      <Button transparent style={styles.btnHeader} onPress={this.props.openDrawer} >
-                        <Icon name="ios-menu" />
-                      </Button>
                     </View>
                   </View>
                 </Header>
