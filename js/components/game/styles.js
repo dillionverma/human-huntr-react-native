@@ -175,6 +175,9 @@ module.exports = StyleSheet.create({
     marginTop: deviceHeight/1.5,
     width: deviceWidth,
     height: deviceHeight/3.4,
-    backgroundColor: '#000',
+    backgroundColor: '#2ad110',
+    alignSelf: 'center',
+    fontSize: 90,
   },
+
 });

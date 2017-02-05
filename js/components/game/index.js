@@ -61,7 +61,7 @@ class Game extends Component {
         this.setState({
           time: this.state.time+1
         })
-      }, 500);
+      }, 1000);
     }
 
 
@@ -130,7 +130,7 @@ class Game extends Component {
                         </MapView>
 
                         <View style={styles.bottomContainer}>
-                          <Text>test {this.state.time}</Text>
+                          <Text>{this.state.time}</Text>
                         </View>
                       </View>
 
