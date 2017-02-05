@@ -129,7 +129,7 @@ module.exports = StyleSheet.create({
     position: 'absolute',
     margin: 0,
     width: deviceWidth,
-    height: deviceHeight/1.3
+    height: deviceHeight
   },
 
   logoHeader: {
@@ -156,8 +156,10 @@ module.exports = StyleSheet.create({
     alignSelf: 'stretch',
     paddingTop: Platform.OS === 'android' ? 0 : 0,
   },
-  btnHeader: {
-    paddingTop: 10,
+  it: {
+    textAlign: 'center',
+    fontSize: 26,
+    paddingTop: 3
   },
   imageHeader: {
     height: 25,
@@ -174,7 +176,7 @@ module.exports = StyleSheet.create({
     marginTop: deviceHeight/1.3,
     width: deviceWidth,
     height: deviceHeight/1.5,
-    backgroundColor: '#2ad110',
+    //backgroundColor: '#2ad110',
     paddingTop: 20,
     marginBottom: -20,
     flex: 1,
@@ -185,18 +187,25 @@ module.exports = StyleSheet.create({
     alignSelf: 'center',
     height: deviceHeight/3.7,
     lineHeight: 90,
-    
+
   },
-  textLeft: {
+  textWrap: {
     flex: 1,
-    paddingLeft: 5,
+    marginLeft: 25,
+    marginRight: 25
   },
-  textRight: {
+  title: {
     flex: 1,
-    textAlign: 'right',
-    paddingRight: 5,
-    fontSize: 23,
-    lineHeight: 23,
+  },
+  btn: {
+    borderRadius: 28,
+    backgroundColor: '#2ad110',
+    fontSize: 18,
+    paddingTop: 10,
+    paddingRight: 20,
+    paddingBottom: 10,
+    paddingLeft: 20,
+    textAlign: 'center'
   },
 
 

@@ -73,10 +73,11 @@ class Game extends Component {
                 <Header>
                   <View style={styles.header} >
                     <View style={styles.rowHeader}>
+                      <Text style={styles.it} > You are IT!</Text>
                       <Button
                         transparent
                         style={styles.btnHeader}
-                        onPress={() => 
+                        onPress={() =>
                           Alert.alert(
                             'Settings',
                             '',
@@ -86,8 +87,11 @@ class Game extends Component {
                           )
                          }
                       >
+
                         <Icon name="ios-settings" style={{lineHeight: 30}} />
                       </Button>
+
+
 
 
                     </View>
@@ -122,18 +126,23 @@ class Game extends Component {
                           radius={50}
                           fillColor="rgba(8, 141, 225, 0.3)"
                           strokeColor="rgba(8, 141, 225, 0.9)"/>
-                        </MapView>
+                      </MapView>
 
-                        
+
+                      <View style={styles.cameraButton}>
+
+                      </View>
+
+
                         <View style={styles.bottomContainer}>
-                          <View style={styles.textLeft}>
-                            <Text style={{fontSize: 23, lineHeight: 23}}>Players: 4</Text>
+                          <View style={styles.textWrap}>
+                            <Text style={styles.btn} >Players: 4</Text>
                           </View>
-                          <View style={styles.textLeft}>
-                            <Text style={styles.textRight}>{this.state.time} Seconds </Text>
+                          <View style={styles.textWrap}>
+                            <Text style={styles.btn} >{this.state.time} Seconds</Text>
                           </View>
                         </View>
-                      
+
 
                       </View>
 
